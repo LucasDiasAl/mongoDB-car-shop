@@ -10,8 +10,16 @@ abstract class AbstractODM<T> {
     this.modelName = modelName;
     this.model = models[modelName] || model(this.modelName, this.schema);
   }
-  public async register(objToAdd: T): Promise<T> {
+  public async register(objToAdd: T): Promise<T | null> {
     return this.model.create({ ...objToAdd });
+  }
+
+  public async getAll(): Promise<T[] | null> {
+    return this.model.find();
+  }
+
+  public async getById(id: string): Promise<T | null> {
+    return this.model.findById(id);
   }
 }
 

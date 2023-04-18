@@ -1,8 +1,9 @@
-import { Request, Response } from 'express';
+import { Request, Response, NextFunction } from 'express';
 import IError from '../Interfaces/IError';
 
-export default class ErrorHandler {
-  static error(error: IError, req: Request, res: Response) {
-    return res.status(error.type || 500).json({ message: error.message });
+class ErrorHandler {
+  static error(err: IError, _req: Request, res: Response, _next: NextFunction) {
+    return res.status(err.status || 500).json({ message: err.message });
   }
 }
+export default ErrorHandler;
