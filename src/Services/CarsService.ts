@@ -13,8 +13,8 @@ class CarsService {
     return null;
   }
   public async registerCar(car: ICar): Promise<Car | null> {
-    const carODM = await this.ODM.register(car);
-    return this.createCarDomain(carODM);
+    const carRegistered = await this.ODM.register(car);
+    return this.createCarDomain(carRegistered);
   }
 
   public async findAllCars(): Promise<(Car | null)[]> {

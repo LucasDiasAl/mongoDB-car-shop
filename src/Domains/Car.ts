@@ -1,6 +1,7 @@
 import ICars from '../Interfaces/ICar';
+import Vehicle from './Vehicle';
 
-export default class Car {
+export default class Car extends Vehicle {
   protected id: string | undefined;
   protected model: string;
   protected year: number;
@@ -10,57 +11,16 @@ export default class Car {
   private doorsQty: number;
   private seatsQty: number;
 
-  constructor(car: ICars) {
-    this.id = car.id;
-    this.model = car.model;
-    this.year = car.year;
-    this.color = car.color;
-    this.status = car.status || false;
-    this.buyValue = car.buyValue;
-    this.doorsQty = car.doorsQty;
-    this.seatsQty = car.seatsQty;
-  }
-
-  public getId(): string | undefined {
-    return this.id;
-  }
-  public setId(newId: string): void {
-    this.id = newId;
-  }
-
-  public getModel(): string {
-    return this.model;
-  }
-  public setModel(newModel: string): void {
-    this.model = newModel;
-  }
-
-  public getYear(): number {
-    return this.year;
-  }
-  public setYear(newYear: number): void {
-    this.year = newYear;
-  }
-
-  public getColor(): string {
-    return this.color;
-  }
-  public setColor(newColor: string): void {
-    this.color = newColor;
-  }
-
-  public getStatus(): boolean {
-    return this.status;
-  }
-  public setStatus(newStatus: boolean): void {
-    this.status = newStatus;
-  }
-
-  public getBuyValue(): number {
-    return this.buyValue;
-  }
-  public setBuyValue(newBuyValue: number): void {
-    this.buyValue = newBuyValue;
+  constructor({ id, model, year, color, status, buyValue, doorsQty, seatsQty }: ICars) {
+    super({ id, model, year, color, status, buyValue });
+    this.id = id;
+    this.model = model;
+    this.year = year;
+    this.color = color;
+    this.status = status || false;
+    this.buyValue = buyValue;
+    this.doorsQty = doorsQty;
+    this.seatsQty = seatsQty;
   }
 
   public getDoorsQty(): number {
