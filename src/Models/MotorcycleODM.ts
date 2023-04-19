@@ -12,7 +12,7 @@ export default class MotorcyclesODM extends AbstractODM<IMotorcycle> {
       buyValue: { type: Number, required: true },
       category: { type: String, enum: ['Street', 'Custom', 'Trail'], required: true },
       engineCapacity: { type: Number, required: true },
-    });
+    }, { versionKey: false });
     super(schema, 'Motorcycle');
   }
 }
