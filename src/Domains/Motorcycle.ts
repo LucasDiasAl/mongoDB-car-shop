@@ -1,4 +1,4 @@
-import IMotorcycle, { IMotorcycleCategory } from '../Interfaces/IMotorcycle';
+import IMotorcycle from '../Interfaces/IMotorcycle';
 import Vehicle from './Vehicle';
 
 export default class Motorcycle extends Vehicle {
@@ -8,7 +8,7 @@ export default class Motorcycle extends Vehicle {
   protected color: string;
   protected status: boolean;
   protected buyValue: number;
-  private category: IMotorcycleCategory;
+  private category: string;
   private engineCapacity: number;
 
   constructor({ id, model, year, color, status, buyValue, category, engineCapacity }: IMotorcycle) {
@@ -26,7 +26,7 @@ export default class Motorcycle extends Vehicle {
   public getCategory(): string {
     return this.category;
   }
-  public setCategory(category: IMotorcycleCategory): void {
+  public setCategory(category: string): void {
     this.category = category;
   }
 
