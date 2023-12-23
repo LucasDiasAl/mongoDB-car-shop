@@ -1,0 +1,29 @@
+[
+  {
+    "model": "Marea",
+    "year": 2002,
+    "color": "Black",
+    "status": true,
+    "buyValue": 15990,
+    "doorsQty": 4,
+    "seatsQty": 5
+  },
+  {
+    "model": "Fiat 500",
+    "year": 2020,
+    "color": "Red",
+    "status": true,
+    "buyValue": 25000,
+    "doorsQty": 2,
+    "seatsQty": 4
+  },
+  {
+    "model": "Toyota Camry",
+    "year": 2019,
+    "color": "Silver",
+    "status": true,
+    "buyValue": 30000,
+    "doorsQty": 4,
+    "seatsQty": 5
+  }
+]
