@@ -1,0 +1,10 @@
+FROM mongo:5.0.7
+
+ARG MONGO_URI
+
+ENV MONGO_URI ${MONGO_URI}
+
+COPY ./dataSeed ./seed
+
+CMD mongoimport --db CarShop --uri ${MONGO_URI} --collection cars --drop --file /seed/car_data.json --jsonArray && \
+  mongoimport --db CarShop --uri ${MONGO_URI} --collection motorcycles --drop --file /seed/motorcycle_data.json --jsonArray
